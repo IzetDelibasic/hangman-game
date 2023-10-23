@@ -33,11 +33,12 @@ const KEYS = [
 
   type KeyboardProps = {
     activeLetters: string[]
+    disabled: boolean
     inactiveLetters: string[]
     addGuessedLetter: (letter: string) => void
   }
 
-export function Keyboard({activeLetters, inactiveLetters, addGuessedLetter} : KeyboardProps) {
+export function Keyboard({activeLetters, disabled = false, inactiveLetters, addGuessedLetter} : KeyboardProps) {
     return <div style={{display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr)",
     gap: ".5rem",
         }}
